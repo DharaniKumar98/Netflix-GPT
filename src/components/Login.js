@@ -7,16 +7,15 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BACKGROUND_IMG } from "../utils/constants";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const name = useRef(null);
   const email = useRef(null);
@@ -50,7 +49,6 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -70,8 +68,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
           // ...
         })
         .catch((error) => {
@@ -91,7 +87,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/4690cab8-243a-4552-baef-1fb415632f74/web/IN-en-20241118-TRIFECTA-perspective_0b813abc-8365-4a43-a9d8-14c06e84c9f3_large.jpg"
+          src={BACKGROUND_IMG}
           alt="BackgroundImage"
         />
       </div>
@@ -139,7 +135,7 @@ const Login = () => {
         >
           {!isSignIn
             ? "Already a user? Sign In now"
-            : "New to Netflix? Sign Up now."}
+            : "New to Netflix? Sign Up now"}
         </p>
       </form>
     </div>

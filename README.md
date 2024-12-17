@@ -14,6 +14,25 @@
 - Created a user store with Redux Slice
 - Implement SignOut
 - update user profile with display name in firebase
+- Bugfix: SignUp user displayName & profile picture update
+- Bugfix: Redirect /browse req to login page if the user is not logged in & vice-versa
+- Unsubscribed to the onAuthStateChanged callback
+- create a constants file & add the hardcoded strings to this file
+- Register in TMDB  & create an App & get Access token
+- Get Movie Data from Now Playing movie list API
+- created Custom Hook for fetching Now Playing Movies 
+- created movies slice
+- updated movies slice with NowPlaying Movies data
+- Planning for MainContainer & secondary container
+- Fetch data for Trailer video & Update store with Trailer video data
+- Embedded youtube video & made it autoplay in mute & in loop
+- CSS to make MainContainer look more like Netflix
+- Build Secondary Container
+- Build Movie List Component
+- Build Movie Card Component
+- TMDB Image CDN URL
+- custom hooks for for all movies list
+- 
  
 # Features
 - Login/Sign Up 
